@@ -272,6 +272,23 @@
   .src li{list-style:none;}
   .disc{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;color:#88A396;}
 
+  /* ---------- SIGNATURE ---------- */
+  .sign{
+    position:fixed;right:20px;bottom:16px;z-index:60;
+    display:flex;align-items:baseline;gap:7px;
+    padding:5px 11px 6px;border-radius:999px;
+    background:rgba(255,255,255,.82);
+    border:1px solid rgba(23,33,30,.07);
+    -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+    box-shadow:0 1px 6px rgba(23,33,30,.05);
+    pointer-events:none;user-select:none;
+  }
+  .sign i{font-style:normal;font-size:10px;letter-spacing:.14em;color:#9AA49D;}
+  .sign b{font-weight:500;font-size:11px;letter-spacing:.06em;color:#6E7873;}
+  .credit{display:flex;align-items:baseline;gap:8px;margin-top:20px;}
+  .credit i{font-style:normal;font-size:10px;letter-spacing:.14em;color:#6E8878;}
+  .credit b{font-weight:500;font-size:11px;letter-spacing:.06em;color:#8FB0A0;}
+
   @media (max-width:900px){
     .hero h1{font-size:30px;}
     .hero-facts div{padding-right:24px;margin-right:24px;}
@@ -293,6 +310,9 @@
     .city,.panel,.plan,.rule,.win,.tip{break-inside:avoid;}
     footer{background:#fff;color:#000;border-top:1px solid #999;}
     footer h5,.disc{color:#333;}
+    .sign{display:none;}
+    .credit i{color:#555;}
+    .credit b{color:#222;}
   }
 </style>
 </head>
@@ -771,8 +791,11 @@
       整理时间：2026 年 10 月 23 日。本页为公开信息整理，非官方发布，优惠名单、预约规则与时间窗口可能随时调整，
       出行前请以「文旅深圳」及各景区官方公众号的最新公告为准。景区数量与代表景区仅列出有公开口径的部分，未列出的景区不代表不参与。
     </div>
+    <div class="credit"><i>作者</i><b>蔡子民</b></div>
   </div>
 </footer>
+
+<div class="sign" role="note" aria-label="作者 蔡子民"><i>作者</i><b>蔡子民</b></div>
 
 </body>
 </html>
