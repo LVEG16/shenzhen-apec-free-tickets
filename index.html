@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>深圳 APEC 会议周 · 文旅免票指南</title>
+<style>
+  :root{
+    --bg:#F7F5EF;
+    --card:#FFFFFF;
+    --ink:#17211E;
+    --ink2:#4C5A54;
+    --ink3:#7A867F;
+    --line:#E3DED2;
+    --line2:#EFEAE0;
+    --green:#0F5132;
+    --green2:#1C7A4C;
+    --green-soft:#E7F0E9;
+    --clay:#A9501F;
+    --clay-soft:#F6E9E0;
+    --sand:#EFE7D7;
+    --deep:#0D3A2C;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",sans-serif;
+    font-size:15px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--deep);
+    color:#F2EFE6;
+    padding:64px 0 56px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;right:-120px;top:-120px;
+    width:420px;height:420px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.09);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;right:-40px;top:40px;
+    width:280px;height:280px;border-radius:50%;
+    border:1px solid rgba(255,255,255,.07);
+  }
+  .eyebrow{
+    font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+    color:#9CC4AE;margin-bottom:18px;font-weight:500;
+  }
+  .hero h1{
+    font-size:42px;line-height:1.2;font-weight:600;letter-spacing:-.01em;
+    margin-bottom:16px;
+  }
+  .hero h1 em{font-style:normal;color:#E8C98A;}
+  .lede{
+    font-size:16px;color:#C8D6CD;max-width:640px;line-height:1.75;
+  }
+  .hero-facts{
+    display:flex;flex-wrap:wrap;gap:0;
+    margin-top:38px;border-top:1px solid rgba(255,255,255,.14);
+    padding-top:26px;
+  }
+  .hero-facts div{
+    padding-right:44px;margin-right:44px;
+    border-right:1px solid rgba(255,255,255,.14);
+  }
+  .hero-facts div:last-child{border:none;margin-right:0;padding-right:0;}
+  .hero-facts dt{font-size:11px;letter-spacing:.1em;color:#8FAFA0;margin-bottom:6px;}
+  .hero-facts dd{font-size:16px;font-weight:500;color:#F4F1E8;}
+
+  /* ---------- NAV ---------- */
+  .toc{
+    background:rgba(247,245,239,.94);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+    position:sticky;top:0;z-index:50;
+  }
+  .toc .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:0;padding-bottom:0;}
+  .toc a{
+    display:block;padding:14px 14px;font-size:13.5px;color:var(--ink2);
+    text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;
+  }
+  .toc a:hover{color:var(--green);border-bottom-color:var(--green2);}
+  .toc b{font-variant-numeric:tabular-nums;color:var(--ink3);font-weight:500;margin-right:6px;}
+
+  /* ---------- SECTION ---------- */
+  section{padding:56px 0;}
+  section + section{border-top:1px solid var(--line);}
+  .sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:8px;}
+  .sec-num{
+    font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--clay);
+    font-variant-numeric:tabular-nums;padding-top:6px;
+  }
+  .sec-head h2{font-size:26px;font-weight:600;letter-spacing:-.01em;}
+  .sec-desc{color:var(--ink2);max-width:720px;margin-bottom:32px;font-size:14.5px;}
+
+  /* ---------- KPI ---------- */
+  .kpi{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--line);border-radius:var(--radius);
+    background:var(--card);overflow:hidden;margin-top:34px;
+  }
+  .kpi div{padding:26px 24px;border-right:1px solid var(--line2);}
+  .kpi div:last-child{border-right:none;}
+  .kpi .n{font-size:32px;font-weight:600;color:var(--green);line-height:1.1;font-variant-numeric:tabular-nums;}
+  .kpi .n span{font-size:15px;font-weight:500;color:var(--ink2);margin-left:2px;}
+  .kpi .l{font-size:12.5px;color:var(--ink3);margin-top:8px;}
+
+  /* ---------- RULES ---------- */
+  .rules{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .rule{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 20px 20px;position:relative;
+  }
+  .rule .k{
+    font-size:11px;letter-spacing:.14em;color:var(--ink3);
+    margin-bottom:10px;font-weight:500;
+  }
+  .rule h4{font-size:15px;font-weight:600;margin-bottom:8px;}
+  .rule p{font-size:13px;color:var(--ink2);line-height:1.65;}
+  .rule .tag{
+    display:inline-block;margin-top:12px;font-size:11.5px;
+    background:var(--green-soft);color:var(--green);
+    padding:3px 9px;border-radius:6px;
+  }
+
+  /* ---------- WINDOWS ---------- */
+  .windows{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .win{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;
+  }
+  .win .place{font-size:12.5px;color:var(--ink3);margin-bottom:8px;}
+  .win .range{font-size:21px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em;}
+  .win .days{font-size:12.5px;color:var(--clay);font-weight:500;margin-top:6px;}
+  .win p{font-size:12.5px;color:var(--ink3);margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;}
+  .win.long{border-color:#D9C7A8;background:#FCF8F0;}
+
+  .strip{
+    display:grid;grid-template-columns:repeat(9,1fr);gap:6px;margin-top:24px;
+  }
+  .strip .d{
+    border:1px solid var(--line);border-radius:10px;background:var(--card);
+    padding:10px 4px;text-align:center;
+  }
+  .strip .d .num{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums;}
+  .strip .d .wd{font-size:10.5px;color:var(--ink3);margin-top:2px;}
+  .strip .d.weekend{background:var(--sand);border-color:#DCCFB4;}
+  .strip .d.weekend .wd{color:#8A6A34;}
+  .strip .d.meet{background:var(--deep);border-color:var(--deep);}
+  .strip .d.meet .num{color:#F4F1E8;}
+  .strip .d.meet .wd{color:#9CC4AE;}
+  .strip-legend{display:flex;gap:20px;margin-top:12px;font-size:11.5px;color:var(--ink3);}
+  .strip-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;}
+  .strip-legend .l1{background:var(--sand);border:1px solid #DCCFB4;}
+  .strip-legend .l2{background:var(--deep);}
+
+  /* ---------- GROUP ---------- */
+  .group-title{
+    display:flex;align-items:center;gap:14px;margin:44px 0 20px;
+  }
+  .group-title:first-of-type{margin-top:8px;}
+  .group-title .badge-g{
+    font-size:11.5px;font-weight:600;letter-spacing:.08em;
+    background:var(--green);color:#fff;padding:5px 11px;border-radius:6px;
+  }
+  .group-title .badge-g.alt{background:var(--clay);}
+  .group-title h3{font-size:18px;font-weight:600;}
+  .group-title .count{font-size:13px;color:var(--ink3);}
+
+  /* ---------- CITY GRID ---------- */
+  .cities{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .city{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:22px 22px 20px;transition:border-color .18s ease,box-shadow .18s ease;
+  }
+  .city:hover{border-color:#C9D8CC;box-shadow:0 2px 14px rgba(15,81,50,.06);}
+  .city-h{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .city-h h4{font-size:17px;font-weight:600;}
+  .city-h .cnt{
+    font-size:11px;color:var(--green);background:var(--green-soft);
+    padding:2px 8px;border-radius:5px;font-weight:500;
+  }
+  .city-h .cnt.alt{color:var(--clay);background:var(--clay-soft);}
+  .city .pos{font-size:12.5px;color:var(--ink3);margin-bottom:14px;}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;}
+  .chips span{
+    font-size:12.5px;color:var(--ink);background:#F4F2EC;
+    border:1px solid var(--line2);padding:4px 10px;border-radius:7px;
+  }
+  .chips span.hl{background:#FBF3E4;border-color:#E4D3AF;color:#7A5620;}
+  .city .foot{
+    font-size:12px;color:var(--ink3);margin-top:14px;padding-top:12px;
+    border-top:1px dashed var(--line);line-height:1.6;
+  }
+  .city .foot b{color:var(--ink2);font-weight:500;}
+
+  /* ---------- OUTSIDE ---------- */
+  .out-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:16px;}
+  .panel{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 24px 22px;
+  }
+  .panel h4{font-size:16px;font-weight:600;margin-bottom:4px;}
+  .panel .sub{font-size:12.5px;color:var(--ink3);margin-bottom:16px;}
+  .list{list-style:none;}
+  .list li{
+    display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line2);
+    font-size:13.5px;align-items:baseline;
+  }
+  .list li:last-child{border-bottom:none;}
+  .list .idx{
+    font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums;
+    min-width:18px;padding-top:2px;
+  }
+  .list .nm{font-weight:500;}
+  .list .note{color:var(--ink3);font-size:12px;margin-left:auto;white-space:nowrap;padding-left:12px;}
+
+  /* ---------- TIPS ---------- */
+  .tips{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+  .tip{
+    display:flex;gap:14px;background:var(--card);border:1px solid var(--line);
+    border-radius:var(--radius);padding:20px;
+  }
+  .tip .mark{
+    flex:none;width:26px;height:26px;border-radius:50%;
+    background:var(--green-soft);color:var(--green);
+    font-size:12px;font-weight:600;display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .tip.warn .mark{background:var(--clay-soft);color:var(--clay);}
+  .tip h4{font-size:14px;font-weight:600;margin-bottom:5px;}
+  .tip p{font-size:13px;color:var(--ink2);line-height:1.65;}
+
+  /* ---------- PLAN ---------- */
+  .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .plan{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px;display:flex;flex-direction:column;
+  }
+  .plan .pd{
+    font-size:11px;letter-spacing:.12em;color:var(--clay);font-weight:600;margin-bottom:12px;
+  }
+  .plan h4{font-size:17px;font-weight:600;margin-bottom:6px;}
+  .plan .route{font-size:12.5px;color:var(--ink3);margin-bottom:14px;line-height:1.6;}
+  .plan ul{list-style:none;margin-top:auto;}
+  .plan ul li{
+    font-size:12.5px;color:var(--ink2);padding:6px 0 6px 14px;position:relative;
+  }
+  .plan ul li::before{
+    content:"";position:absolute;left:0;top:13px;width:4px;height:4px;
+    border-radius:50%;background:var(--green2);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:#12312A;color:#A9BFB4;padding:48px 0 40px;font-size:12.5px;line-height:1.8;
+  }
+  footer h5{font-size:12px;letter-spacing:.12em;color:#7FA491;margin-bottom:10px;font-weight:500;}
+  .src{display:grid;grid-template-columns:repeat(2,1fr);gap:8px 40px;margin-bottom:26px;}
+  .src li{list-style:none;}
+  .disc{border-top:1px solid rgba(255,255,255,.1);padding-top:20px;color:#88A396;}
+
+  @media (max-width:900px){
+    .hero h1{font-size:30px;}
+    .hero-facts div{padding-right:24px;margin-right:24px;}
+    .kpi{grid-template-columns:repeat(2,1fr);}
+    .kpi div:nth-child(2){border-right:none;}
+    .kpi div:nth-child(1),.kpi div:nth-child(2){border-bottom:1px solid var(--line2);}
+    .rules,.windows,.cities,.out-grid,.tips,.plans,.src{grid-template-columns:1fr;}
+    section{padding:40px 0;}
+  }
+  @media print{
+    .toc{display:none;}
+    body{background:#fff;font-size:11pt;}
+    .hero{background:#fff;color:#000;padding:0 0 20px;border-bottom:2px solid #000;}
+    .hero h1{font-size:24pt;color:#000;}
+    .hero h1 em{color:#000;}
+    .lede,.eyebrow{color:#333;}
+    .hero-facts{border-color:#ccc;}
+    .hero-facts dd{color:#000;}
+    .city,.panel,.plan,.rule,.win,.tip{break-inside:avoid;}
+    footer{background:#fff;color:#000;border-top:1px solid #999;}
+    footer h5,.disc{color:#333;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">APEC China 2026 · Shenzhen</div>
+    <h1>会议周文旅免票指南<br><em>深圳市民专属 · 9 天窗口</em></h1>
+    <p class="lede">
+      2026 年 11 月 14 日起，广东 13 个地市 600 多家 A 级景区、省外 15 家 5A 景区对深圳市民免除首道门票。
+      这是近年来覆盖范围最大的一次跨省联动优惠，窗口期正好横跨两个完整周末。
+    </p>
+    <dl class="hero-facts">
+      <div>
+        <dt>省内窗口</dt>
+        <dd>11.14 — 11.22</dd>
+      </div>
+      <div>
+        <dt>省外窗口</dt>
+        <dd>11.16 — 11.22</dd>
+      </div>
+      <div>
+        <dt>入园凭证</dt>
+        <dd>深圳证件原件</dd>
+      </div>
+      <div>
+        <dt>免票范围</dt>
+        <dd>仅首道大门票</dd>
+      </div>
+    </dl>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#rules"><b>01</b>四个前提</a>
+    <a href="#window"><b>02</b>时间窗口</a>
+    <a href="#guangdong"><b>03</b>广东省内</a>
+    <a href="#outside"><b>04</b>省外景区</a>
+    <a href="#tips"><b>05</b>预约与避坑</a>
+    <a href="#plan"><b>06</b>行程建议</a>
+  </div>
+</nav>
+
+<main>
+
+  <!-- 01 规则 -->
+  <section id="rules">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num">01</div><h2>四个前提：先确认自己能不能免</h2></div>
+      <p class="sec-desc">
+        这轮优惠不是「所有深圳人自动免票」，而是「持深圳有效证件的本人 + 提前预约 + 只免第一道门」。
+        下面四条决定了你能不能顺利进园，出发前逐条对一遍。
+      </p>
+
+      <div class="rules">
+        <div class="rule">
+          <div class="k">WHO</div>
+          <h4>谁能免</h4>
+          <p>持深圳市公安局签发的有效证件的市民，<b>仅限本人使用</b>。非深户持深圳居住证同样享受。</p>
+          <span class="tag">身份证 / 居住证 / 社保卡 / 户口本</span>
+        </div>
+        <div class="rule">
+          <div class="k">WHAT TO BRING</div>
+          <h4>带什么</h4>
+          <p>必须带<b>证件原件</b>到窗口核验，照片、复印件、电子证照多数景区不认。</p>
+          <span class="tag">原件 · 不认截图</span>
+        </div>
+        <div class="rule">
+          <div class="k">WHAT'S FREE</div>
+          <h4>免什么</h4>
+          <p>只免<b>首道大门票</b>。观光车、索道、游船、温泉、游乐项目等二次消费全部自理。</p>
+          <span class="tag">二消不参与</span>
+        </div>
+        <div class="rule">
+          <div class="k">HOW TO ENTER</div>
+          <h4>怎么约</h4>
+          <p>多数景区窗口直接核验；<b>限流的热门景区必须提前实名预约</b>「0 元门票」。</p>
+          <span class="tag">提前 1—2 天查余量</span>
+        </div>
+      </div>
+
+      <div class="kpi">
+        <div><div class="n">600<span>+</span></div><div class="l">广东全省参与 A 级景区（家）</div></div>
+        <div><div class="n">13</div><div class="l">参与地市（个）</div></div>
+        <div><div class="n">15</div><div class="l">省外 5A 景区（家）</div></div>
+        <div><div class="n">9</div><div class="l">省内最长免票天数（天）</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 窗口 -->
+  <section id="window">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num">02</div><h2>三个不同的时间窗口</h2></div>
+      <p class="sec-desc">
+        最容易踩坑的地方：省内、省外、华蓥山三个窗口的起止时间都不一样。
+        省内 11 月 14 日就开始，省外要等到 16 日，别按同一个日子规划。
+      </p>
+
+      <div class="windows">
+        <div class="win">
+          <div class="place">广东省内 · 13 个地市</div>
+          <div class="range">11.14 — 11.22</div>
+          <div class="days">9 天 · 含两个完整周末</div>
+          <p>覆盖 11.14—15、11.21—22 两个周末，是唯一能「周六出发、周日返程」的窗口。</p>
+        </div>
+        <div class="win">
+          <div class="place">省外 · 四川 12 家 + 安徽 3 家</div>
+          <div class="range">11.16 — 11.22</div>
+          <div class="days">7 天 · 需请假</div>
+          <p>与会议周同步，前 3 天是工作日；跨省出行至少要请 11.16—20 中的假。</p>
+        </div>
+        <div class="win long">
+          <div class="place">四川广安 · 华蓥山</div>
+          <div class="range">11.16 — 12.31</div>
+          <div class="days">46 天 · 错峰首选</div>
+          <p>唯一不跟着会议周截止的景区，可以等免票潮过去了再去。</p>
+        </div>
+      </div>
+
+      <div class="strip">
+        <div class="d weekend"><div class="num">14</div><div class="wd">周六</div></div>
+        <div class="d weekend"><div class="num">15</div><div class="wd">周日</div></div>
+        <div class="d"><div class="num">16</div><div class="wd">周一</div></div>
+        <div class="d"><div class="num">17</div><div class="wd">周二</div></div>
+        <div class="d meet"><div class="num">18</div><div class="wd">周三</div></div>
+        <div class="d meet"><div class="num">19</div><div class="wd">周四</div></div>
+        <div class="d"><div class="num">20</div><div class="wd">周五</div></div>
+        <div class="d weekend"><div class="num">21</div><div class="wd">周六</div></div>
+        <div class="d weekend"><div class="num">22</div><div class="wd">周日</div></div>
+      </div>
+      <div class="strip-legend">
+        <span><i class="l1"></i>周末（唯一无需请假的出游日）</span>
+        <span><i class="l2"></i>APEC 领导人非正式会议（11.18—19）</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 广东省内 -->
+  <section id="guangdong">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num">03</div><h2>广东省内：两类城市，两种免法</h2></div>
+      <p class="sec-desc">
+        省内 13 个地市分两种口径：<b>A 类</b>是全市所有 A 级景区一刀切全免，最省心；
+        <b>B 类</b>是只免「国有 A 级景区」，或额外叠加折扣，范围要看清。
+      </p>
+
+      <div class="group-title">
+        <span class="badge-g">A 类</span>
+        <h3>全域 A 级景区全免</h3>
+        <span class="count">共 6 市 · 全市 A 级景区首道门票全免，不用挑</span>
+      </div>
+
+      <div class="cities">
+        <div class="city">
+          <div class="city-h"><h4>韶关</h4><span class="cnt">45 家 A 级</span></div>
+          <div class="pos">丹霞地貌 + 客家古村，粤北秋色最浓的一站</div>
+          <div class="chips">
+            <span class="hl">丹霞山</span><span>云门山生态文化旅游区</span><span>珠玑古巷·梅关古道</span>
+            <span>帽子峰</span><span>满堂客家大围</span><span>古佛洞天</span>
+            <span>三龙谷（龙王潭）</span><span>经律论文化旅游小镇</span>
+          </div>
+          <div class="foot"><b>交通：</b>深圳北—韶关高铁约 1.5 小时，丹霞山景区有专线接驳。<b>注意：</b>丹霞山索道、游船为二次消费，需自理。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>河源</h4><span class="cnt">20 家 A 级</span></div>
+          <div class="pos">万绿湖 + 温泉，适合两天一夜的懒人行程</div>
+          <div class="chips">
+            <span class="hl">万绿湖风景区</span><span>河源恐龙文博园</span><span>霍山旅游风景区</span>
+            <span>苏家围·东江画廊</span><span>黄龙岩畲族风情旅游区</span><span>巴伐利亚庄园</span>
+            <span>御临门温泉度假区</span><span>春沐源小镇</span><span>百家鲜客家女奇妙乐园</span>
+          </div>
+          <div class="foot">
+            <b>唯一需要预约的 A 类市：</b>全部走「乐游河源」小程序提前预约。<br>
+            <b>部分仍收费：</b>万绿湖游船讲解费 79 元/人；巴伐利亚庄园、御临门免的是温泉门票（原价 168 元）；春沐源小镇原价 300 元/车；百家鲜周日闭馆。
+          </div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>梅州</h4><span class="cnt">全域全免</span></div>
+          <div class="pos">世界客都，围龙屋与客家文化主线</div>
+          <div class="chips">
+            <span class="hl">客家围龙屋</span><span>中国客家博物馆</span><span>灵光寺</span><span>桥溪古韵</span>
+          </div>
+          <div class="foot"><b>交通：</b>深圳北—梅州西高铁约 2 小时。<b>适合：</b>人文线，走路少，适合带长辈。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>汕尾</h4><span class="cnt">全域全免</span></div>
+          <div class="pos">滨海线，红海湾看日出，海丰看红色旧址</div>
+          <div class="chips">
+            <span class="hl">红海湾</span><span>玄武山</span><span>莲花山森林公园</span><span>彭湃故居</span>
+          </div>
+          <div class="foot"><b>交通：</b>深圳北—汕尾高铁约 1 小时，是 A 类里最近的海。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>清远</h4><span class="cnt">全域全免</span></div>
+          <div class="pos">溶洞 + 峡谷 + 漂流，秋季水量仍可</div>
+          <div class="chips">
+            <span class="hl">连州地下河</span><span>金子山</span><span>牛鱼嘴</span><span>古龙峡</span><span>千年瑶寨</span>
+          </div>
+          <div class="foot"><b>额外福利：</b>清远长隆度假区门票 5 折（自驾车票不参与折扣）。<b>交通：</b>深圳北—清远高铁约 1 小时。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>云浮</h4><span class="cnt">19 家 A 级</span></div>
+          <div class="pos">禅宗祖庭 + 喀斯特，康养向，人少</div>
+          <div class="chips">
+            <span class="hl">六祖故里旅游度假区</span><span>蟠龙洞</span><span>天露山</span>
+          </div>
+          <div class="foot"><b>适合：</b>温泉 + 寺庙组合，两天一晚刚好；景区之间距离较远，建议自驾。</div>
+        </div>
+      </div>
+
+      <div class="group-title">
+        <span class="badge-g alt">B 类</span>
+        <h3>国有 A 级景区全免 / 专属折扣</h3>
+        <span class="count">共 9 市 · 免票范围限于国有 A 级景区，或免票叠加折扣</span>
+      </div>
+
+      <div class="cities">
+        <div class="city">
+          <div class="city-h"><h4>肇庆</h4><span class="cnt alt">两大 5A 全免</span></div>
+          <div class="pos">湖光山色 + 端砚文化，性价比最高的一站</div>
+          <div class="chips">
+            <span class="hl">鼎湖山（5A）</span><span class="hl">七星岩（5A）</span><span>星湖绿道</span><span>端砚文化村</span>
+          </div>
+          <div class="foot"><b>交通：</b>深圳北—肇庆东高铁约 1.5—2 小时。两景区同属星湖景区，一天可连刷。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>惠州</h4><span class="cnt alt">50+ 家国有 A 级</span></div>
+          <div class="pos">罗浮山 + 南昆山，离龙岗最近的登山选项</div>
+          <div class="chips">
+            <span class="hl">罗浮山（5A）</span><span>南昆山</span><span>巽寮湾</span><span>惠州西湖</span>
+          </div>
+          <div class="foot"><b>交通：</b>自驾约 1—1.5 小时，是深圳东部出发最省时的 5A。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>潮州</h4><span class="cnt alt">国有 A 级全免</span></div>
+          <div class="pos">古城 + 工夫茶 + 潮剧，纯人文线</div>
+          <div class="chips">
+            <span class="hl">广济桥</span><span>牌坊街</span><span>韩文公祠</span><span>开元寺</span>
+          </div>
+          <div class="foot"><b>注意：</b>广济桥每日限流，晚上有「过河拆桥」浮桥启闭，建议下午进桥、傍晚上灯。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>珠海</h4><span class="cnt alt">国有 A 级全免</span></div>
+          <div class="pos">滨海 + 海岛，叠加长隆折扣</div>
+          <div class="chips">
+            <span class="hl">圆明新园</span><span>东澳岛</span><span>外伶仃岛</span><span>长隆海洋王国（5 折）</span>
+          </div>
+          <div class="foot"><b>说明：</b>长隆为 5 折而非免票；海岛需另付船票，属二次消费。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>汕头</h4><span class="cnt alt">国有 A 级全免</span></div>
+          <div class="pos">南澳岛环岛 + 小公园开埠区</div>
+          <div class="chips">
+            <span class="hl">南澳岛</span><span>小公园开埠区</span><span>礐石风景区</span><span>陈慈黉故居</span>
+          </div>
+          <div class="foot"><b>交通：</b>深圳北—汕头约 2 小时；上岛大桥节假日易堵，建议早出发。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>阳江</h4><span class="cnt alt">国有 A 级全免</span></div>
+          <div class="pos">海陵岛 + 海上丝路博物馆</div>
+          <div class="chips">
+            <span class="hl">海陵岛</span><span>海上丝绸之路博物馆</span><span>大角湾</span>
+          </div>
+          <div class="foot"><b>说明：</b>「南海Ⅰ号」沉船馆是本线核心，免票后仍建议预留 2 小时。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>茂名</h4><span class="cnt alt">18 家 A 级</span></div>
+          <div class="pos">滨海荔乡，中国第一滩</div>
+          <div class="chips">
+            <span class="hl">中国第一滩</span><span>广垦国家热带农业公园</span><span>浪漫海岸</span>
+          </div>
+          <div class="foot"><b>适合：</b>顺路串湛江，走粤西环线。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>湛江</h4><span class="cnt alt">24 家 A 级</span></div>
+          <div class="pos">火山湖 + 军港，雷州半岛山海线</div>
+          <div class="chips">
+            <span class="hl">湖光岩</span><span>金沙湾</span><span>特呈岛</span>
+          </div>
+          <div class="foot"><b>说明：</b>湖光岩为玛珥火山湖，环湖步道约 7 公里，适合轻徒步。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>揭阳</h4><span class="cnt alt">国有 A 级全免</span></div>
+          <div class="pos">玉都 + 潮汕侨乡古厝</div>
+          <div class="chips">
+            <span class="hl">阳美玉都</span><span>广德安里</span><span>学宫</span>
+          </div>
+          <div class="foot"><b>适合：</b>与潮州、汕头串成潮汕三日线。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 省外 -->
+  <section id="outside">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num">04</div><h2>省外：15 家 5A，川西彩林正当季</h2></div>
+      <p class="sec-desc">
+        省外部分含金量更高但门槛也更硬：要请假、要订票、要抢预约名额。
+        11 月中旬正好是川西彩林最佳观赏期，是全年性价比最高的一段时间。
+      </p>
+
+      <div class="out-grid">
+        <div class="panel">
+          <h4>四川省 · 12 家收费 5A 景区</h4>
+          <div class="sub">11.16 — 11.22 · 免首道门票，索道与区间车自理</div>
+          <ul class="list">
+            <li><span class="idx">01</span><span class="nm">九寨沟风景名胜区</span><span class="note">限流 · 必预约</span></li>
+            <li><span class="idx">02</span><span class="nm">黄龙国家级风景名胜区</span><span class="note">高原 · 备氧气</span></li>
+            <li><span class="idx">03</span><span class="nm">四姑娘山景区</span><span class="note">徒步首选</span></li>
+            <li><span class="idx">04</span><span class="nm">青城山—都江堰旅游景区</span><span class="note">世界双遗产</span></li>
+            <li><span class="idx">05</span><span class="nm">峨眉山风景名胜区</span><span class="note">彩林正盛</span></li>
+            <li><span class="idx">06</span><span class="nm">乐山大佛景区</span><span class="note">半日可刷</span></li>
+            <li><span class="idx">07</span><span class="nm">泸定海螺沟冰川森林公园</span><span class="note">冰川 · 温泉</span></li>
+            <li><span class="idx">08</span><span class="nm">甘孜州稻城亚丁景区</span><span class="note">限流 · 必预约</span></li>
+            <li><span class="idx">09—12</span><span class="nm">其余 4 家收费 5A</span><span class="note">名单待官方更新</span></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="panel" style="margin-bottom:16px;">
+            <h4>安徽省 · 黄山及皖南古村</h4>
+            <div class="sub">11.16 — 11.22 · 5A 全免 + 4A 同免</div>
+            <ul class="list">
+              <li><span class="idx">01</span><span class="nm">黄山风景区（5A）</span><span class="note">必预约</span></li>
+              <li><span class="idx">02</span><span class="nm">西递（5A）</span><span class="note">窗口核验</span></li>
+              <li><span class="idx">03</span><span class="nm">宏村（5A）</span><span class="note">窗口核验</span></li>
+              <li><span class="idx">04</span><span class="nm">花山谜窟</span><span class="note">必预约</span></li>
+              <li><span class="idx">05</span><span class="nm">太平湖</span><span class="note">必预约</span></li>
+            </ul>
+          </div>
+
+          <div class="panel" style="background:#FCF8F0;border-color:#D9C7A8;">
+            <h4>四川广安 · 华蓥山（4A）</h4>
+            <div class="sub">11.16 — 12.31 · 唯一不随会议周截止</div>
+            <p style="font-size:13px;color:var(--ink2);">
+              免票持续到年底，完全不用挤 11 月的免票潮。可以挑一个普通工作日的周末去，独享空山。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 避坑 -->
+  <section id="tips">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num">05</div><h2>预约与避坑：六条最容易翻车的地方</h2></div>
+      <p class="sec-desc">免票不等于随便进。下面六条是实际出行时最常遇到的门槛，按顺序检查一遍能省掉大半麻烦。</p>
+
+      <div class="tips">
+        <div class="tip">
+          <div class="mark">1</div>
+          <div>
+            <h4>带原件，不带截图</h4>
+            <p>绝大多数景区只认身份证、居住证、社保卡、户口本的<b>实体原件</b>。电子身份证、粤省事截图在部分景区会被拒。</p>
+          </div>
+        </div>
+        <div class="tip warn">
+          <div class="mark">2</div>
+          <div>
+            <h4>非深户要提前验身份</h4>
+            <p>身份证号段非深圳的，在黄山等景区线上预约时需<b>上传居住证或社保卡照片</b>完成核验，否则预约不生效。</p>
+          </div>
+        </div>
+        <div class="tip">
+          <div class="mark">3</div>
+          <div>
+            <h4>热门景区提前 1—2 天查余量</h4>
+            <p>九寨沟、稻城亚丁、黄山、万绿湖每日限流。出发前 1—2 天在景区官方公众号确认剩余名额，避免跑空。</p>
+          </div>
+        </div>
+        <div class="tip warn">
+          <div class="mark">4</div>
+          <div>
+            <h4>免的是门票，不是全部</h4>
+            <p>索道、观光车、游船、温泉、区间车、讲解费都要另付。川西一条线二消常常超过门票本身。</p>
+          </div>
+        </div>
+        <div class="tip warn">
+          <div class="mark">5</div>
+          <div>
+            <h4>深圳本地景区不参与</h4>
+            <p>世界之窗、欢乐谷等深圳本地主题乐园<b>不在本轮免票名单内</b>，别拿这份攻略去门口排队。</p>
+          </div>
+        </div>
+        <div class="tip">
+          <div class="mark">6</div>
+          <div>
+            <h4>名单会滚动更新</h4>
+            <p>这是第一批次发布，后续还会有省市和平台补充。出行前以「文旅深圳」和各地市文旅公众号的最终名单为准。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 行程 -->
+  <section id="plan">
+    <div class="wrap">
+      <div class="sec-head"><div class="sec-num">06</div><h2>三条可直接照抄的行程</h2></div>
+      <p class="sec-desc">
+        按「几天假 + 从龙岗出发」来配。周末线不用请假，是最现实的选择；长线留给有年假的人。
+      </p>
+
+      <div class="plans">
+        <div class="plan">
+          <div class="pd">2 天 · 不用请假</div>
+          <h4>韶关丹霞山</h4>
+          <div class="route">深圳北 → 韶关 → 丹霞山 → 南华寺 → 返程</div>
+          <ul>
+            <li>周六早班高铁，1.5 小时到韶关</li>
+            <li>丹霞山长老峰看日落，次日阳元山轻徒步</li>
+            <li>回程顺路南华寺，全免无门槛</li>
+            <li>人均预算最低，适合社团周末活动</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <div class="pd">3 天 · 请 1 天假</div>
+          <h4>肇庆 + 惠州环线</h4>
+          <div class="route">深圳 → 肇庆鼎湖山 → 七星岩 → 惠州罗浮山</div>
+          <ul>
+            <li>两个 5A 一次刷完，门票成本为零</li>
+            <li>肇庆段高铁直达，惠州段自驾</li>
+            <li>罗浮山离龙岗最近，可留作最后一天</li>
+            <li>适合带家人，强度低</li>
+          </ul>
+        </div>
+
+        <div class="plan">
+          <div class="pd">5—7 天 · 请 3—5 天假</div>
+          <h4>川西彩林长线</h4>
+          <div class="route">深圳 → 成都 → 四姑娘山 → 丹巴 → 稻城亚丁</div>
+          <ul>
+            <li>11 月中旬是彩林最佳期，也是免票期</li>
+            <li>稻城亚丁需提前抢预约名额</li>
+            <li>高原反应要预留适应日，别排太满</li>
+            <li>机票住宿是大头，门票省下的其实不多</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <h5>数据来源</h5>
+    <ul class="src">
+      <li>广东省文化和旅游厅 · 全省 A 级景区优惠名单</li>
+      <li>文旅深圳 ·「悦赏金秋 乐游神州」文旅优惠发布</li>
+      <li>各地市文旅局公众号（韶关 / 河源 / 肇庆 / 惠州 等）</li>
+      <li>四川省、安徽省相关景区官方公告</li>
+      <li>深圳市政府新闻办 2026-10-15 APEC 会议周发布会</li>
+      <li>深圳本地宝 / 深圳特区报 对优惠名单的汇总报道</li>
+    </ul>
+    <div class="disc">
+      整理时间：2026 年 10 月 23 日。本页为公开信息整理，非官方发布，优惠名单、预约规则与时间窗口可能随时调整，
+      出行前请以「文旅深圳」及各景区官方公众号的最新公告为准。景区数量与代表景区仅列出有公开口径的部分，未列出的景区不代表不参与。
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
