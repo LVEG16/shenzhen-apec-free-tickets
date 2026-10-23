@@ -276,6 +276,15 @@
   .credit{display:flex;align-items:baseline;gap:8px;margin-top:20px;}
   .credit i{font-style:normal;font-size:10px;letter-spacing:.14em;color:#6E8878;}
   .credit b{font-weight:500;font-size:11px;letter-spacing:.06em;color:#8FB0A0;}
+  .caveats{list-style:none;margin-top:14px;}
+  .caveats li{
+    position:relative;padding-left:12px;margin-top:6px;
+    font-size:11.5px;line-height:1.75;color:#7E9A8C;
+  }
+  .caveats li::before{
+    content:"";position:absolute;left:0;top:9px;
+    width:3px;height:3px;border-radius:50%;background:#5E7A6E;
+  }
 
   @media (max-width:900px){
     .hero h1{font-size:30px;}
@@ -310,7 +319,7 @@
     <div class="eyebrow">APEC China 2026 · Shenzhen</div>
     <h1>会议周文旅免票指南<br><em>深圳市民专属 · 9 天窗口</em></h1>
     <p class="lede">
-      2026 年 11 月 14 日起，广东 13 个地市 600 多家 A 级景区、省外 15 家 5A 景区对深圳市民免除首道门票。
+      2026 年 11 月 14 日起，广东 14 个地市 600 多家 A 级景区、省外 15 家 5A 景区对深圳市民免除首道门票。
       这是近年来覆盖范围最大的一次跨省联动优惠，窗口期正好横跨两个完整周末。
     </p>
     <dl class="hero-facts">
@@ -385,7 +394,7 @@
 
       <div class="kpi">
         <div><div class="n">600<span>+</span></div><div class="l">广东全省参与 A 级景区（家）</div></div>
-        <div><div class="n">13</div><div class="l">参与地市（个）</div></div>
+        <div><div class="n">14</div><div class="l">免首道门票的地市（个）</div></div>
         <div><div class="n">15</div><div class="l">省外 5A 景区（家）</div></div>
         <div><div class="n">9</div><div class="l">省内最长免票天数（天）</div></div>
       </div>
@@ -403,7 +412,7 @@
 
       <div class="windows">
         <div class="win">
-          <div class="place">广东省内 · 13 个地市</div>
+          <div class="place">广东省内 · 14 个地市</div>
           <div class="range">11.14 — 11.22</div>
           <div class="days">9 天 · 含两个完整周末</div>
           <p>覆盖 11.14—15、11.21—22 两个周末，是唯一能「周六出发、周日返程」的窗口。</p>
@@ -443,16 +452,16 @@
   <!-- 03 广东省内 -->
   <section id="guangdong">
     <div class="wrap">
-      <div class="sec-head"><div class="sec-num">03</div><h2>广东省内：两类城市，两种免法</h2></div>
+      <div class="sec-head"><div class="sec-num">03</div><h2>广东省内：三类城市，三种免法</h2></div>
       <p class="sec-desc">
-        省内 13 个地市分两种口径：<b>A 类</b>是全市所有 A 级景区一刀切全免，最省心；
-        <b>B 类</b>是只免「国有 A 级景区」，或额外叠加折扣，范围要看清。
+        省内按免票口径分三类：<b>A 类</b>是全市所有 A 级景区一刀切全免，最省心；
+        <b>B 类</b>只免「国有 A 级景区」，范围要看清；<b>C 类</b>是免票与折扣混着来，热门乐园基本只打折。
       </p>
 
       <div class="group-title">
         <span class="badge-g">A 类</span>
         <h3>全域 A 级景区全免</h3>
-        <span class="count">共 6 市 · 全市 A 级景区首道门票全免，不用挑</span>
+        <span class="count">共 7 市 · 超 250 家 A 级景区首道门票全免，不用挑</span>
       </div>
 
       <div class="cities">
@@ -516,24 +525,24 @@
           </div>
           <div class="foot"><b>适合：</b>温泉 + 寺庙组合，两天一晚刚好；景区之间距离较远，建议自驾。</div>
         </div>
-      </div>
 
-      <div class="group-title">
-        <span class="badge-g alt">B 类</span>
-        <h3>国有 A 级景区全免 / 专属折扣</h3>
-        <span class="count">共 9 市 · 免票范围限于国有 A 级景区，或免票叠加折扣</span>
-      </div>
-
-      <div class="cities">
         <div class="city">
-          <div class="city-h"><h4>肇庆</h4><span class="cnt alt">两大 5A 全免</span></div>
+          <div class="city-h"><h4>肇庆</h4><span class="cnt">全域全免</span></div>
           <div class="pos">湖光山色 + 端砚文化，性价比最高的一站</div>
           <div class="chips">
             <span class="hl">鼎湖山（5A）</span><span class="hl">七星岩（5A）</span><span>星湖绿道</span><span>端砚文化村</span>
           </div>
-          <div class="foot"><b>交通：</b>深圳北—肇庆东高铁约 1.5—2 小时。两景区同属星湖景区，一天可连刷。</div>
+          <div class="foot"><b>交通：</b>深圳北—肇庆东高铁约 1.5—2 小时。鼎湖山与七星岩同属星湖景区，一天可连刷。</div>
         </div>
+      </div>
 
+      <div class="group-title">
+        <span class="badge-g alt">B 类</span>
+        <h3>国有 A 级景区全免</h3>
+        <span class="count">共 7 市 · 超 70 家国有 A 级景区，首道门票全免</span>
+      </div>
+
+      <div class="cities">
         <div class="city">
           <div class="city-h"><h4>惠州</h4><span class="cnt alt">50+ 家国有 A 级</span></div>
           <div class="pos">罗浮山 + 南昆山，离龙岗最近的登山选项</div>
@@ -556,9 +565,9 @@
           <div class="city-h"><h4>珠海</h4><span class="cnt alt">国有 A 级全免</span></div>
           <div class="pos">滨海 + 海岛，叠加长隆折扣</div>
           <div class="chips">
-            <span class="hl">圆明新园</span><span>东澳岛</span><span>外伶仃岛</span><span>长隆海洋王国（5 折）</span>
+            <span class="hl">圆明新园</span><span>东澳岛</span><span>外伶仃岛</span><span>长隆（亲子票 7 折）</span><span>港珠澳大桥游（108 元）</span>
           </div>
-          <div class="foot"><b>说明：</b>长隆为 5 折而非免票；海岛需另付船票，属二次消费。</div>
+          <div class="foot"><b>说明：</b>长隆为门市「1 大 1 小」亲子票 7 折，不是免票；海岛需另付船票，属二次消费。</div>
         </div>
 
         <div class="city">
@@ -589,21 +598,81 @@
         </div>
 
         <div class="city">
-          <div class="city-h"><h4>湛江</h4><span class="cnt alt">24 家 A 级</span></div>
-          <div class="pos">火山湖 + 军港，雷州半岛山海线</div>
-          <div class="chips">
-            <span class="hl">湖光岩</span><span>金沙湾</span><span>特呈岛</span>
-          </div>
-          <div class="foot"><b>说明：</b>湖光岩为玛珥火山湖，环湖步道约 7 公里，适合轻徒步。</div>
-        </div>
-
-        <div class="city">
           <div class="city-h"><h4>揭阳</h4><span class="cnt alt">国有 A 级全免</span></div>
           <div class="pos">玉都 + 潮汕侨乡古厝</div>
           <div class="chips">
             <span class="hl">阳美玉都</span><span>广德安里</span><span>学宫</span>
           </div>
           <div class="foot"><b>适合：</b>与潮州、汕头串成潮汕三日线。</div>
+        </div>
+      </div>
+
+      <div class="group-title">
+        <span class="badge-g alt">C 类</span>
+        <h3>专项优惠城市 · 免票混着折扣</h3>
+        <span class="count">共 6 市 · 部分景区免票，热门乐园与地标以 5—7 折为主</span>
+      </div>
+
+      <div class="cities">
+        <div class="city">
+          <div class="city-h"><h4>广州</h4><span class="cnt alt">80+ 家免票</span></div>
+          <div class="pos">全省参与景区最多的城市，免票与折扣并行</div>
+          <div class="chips">
+            <span class="hl">白云山</span><span>帽峰山</span><span>陈家祠</span><span>广东科学中心</span>
+            <span>石门国家森林公园</span><span>流溪河森林公园</span>
+            <span>广州塔（7 折）</span><span>白水寨（5 折）</span><span>莲花山（5 折）</span>
+          </div>
+          <div class="foot"><b>规模：</b>全市 100 多家 A 级景区参与，其中 80 余家对深圳游客免首道门票，另近 20 家首道门票 5 折。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>佛山</h4><span class="cnt alt">20 家参与</span></div>
+          <div class="pos">岭南园林与古建，适合一日往返</div>
+          <div class="chips">
+            <span class="hl">祖庙</span><span>清晖园</span><span>梁园</span><span>南风古灶</span>
+            <span>西樵山（观光车/缆车 5 折）</span><span>顺德欢乐海岸 PLUS（5 折）</span>
+          </div>
+          <div class="foot"><b>说明：</b>西樵山免的是入园票，景区观光车与缆车凭深圳证件 5 折。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>东莞</h4><span class="cnt alt">3 家免票</span></div>
+          <div class="pos">古村 + 山林 + 博物馆，离龙岗最近的一档</div>
+          <div class="chips">
+            <span class="hl">南社明清古村落</span><span>广东观音山国家森林公园</span><span>逸颐艺舍博物馆</span>
+            <span>可园博物馆古建区（5 折）</span><span>香市动物园（8.5 折）</span>
+          </div>
+          <div class="foot"><b>交通：</b>自驾约 1 小时，是本地周末最省时的选择。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>中山</h4><span class="cnt alt">3 家免票</span></div>
+          <div class="pos">深中通道直达，顺带吃饭住宿的短途线</div>
+          <div class="chips">
+            <span class="hl">中山影视城</span><span>大尖山露营公园</span><span>厨邦酱油文化博览馆</span>
+          </div>
+          <div class="foot"><b>凭证：</b>身份证 / 居住证 / 社保卡均可。<b>联动：</b>当地 300 家「四好商户」推出 300+ 项优惠，多家酒店 3.8—7 折。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>江门</h4><span class="cnt alt">碉楼 + 海岛 + 温泉</span></div>
+          <div class="pos">世遗碉楼与海岛温泉的组合线</div>
+          <div class="chips">
+            <span class="hl">开平碉楼（5 折）</span><span>那琴半岛（5 折）</span><span>赤坎华侨古镇（99 元）</span>
+            <span>启超故里·小鸟天堂（免票）</span><span>古劳水乡（免票）</span>
+            <span>川岛套票（5 折）</span><span>古兜温泉谷（78 元）</span>
+          </div>
+          <div class="foot"><b>说明：</b>赤坎古镇原价 150 元，活动价 99 元；川岛套票含往返船票与车票。景区内酒店另享 8 折。</div>
+        </div>
+
+        <div class="city">
+          <div class="city-h"><h4>湛江</h4><span class="cnt alt">22 家 A 级免票</span></div>
+          <div class="pos">火山湖 + 军港，雷州半岛山海线</div>
+          <div class="chips">
+            <span class="hl">湖光岩</span><span>三岭山森林公园</span><span>金沙湾滨海休闲旅游区</span><span>赤坎老街</span>
+            <span>军事文化博览园（免票）</span><span>「军港之夜」演出（5 折）</span>
+          </div>
+          <div class="foot"><b>说明：</b>共 24 家景区参与，其中 22 家 A 级免首道门票；湖光岩为玛珥火山湖，环湖步道约 7 公里。</div>
         </div>
       </div>
     </div>
@@ -767,17 +836,22 @@
   <div class="wrap">
     <h5>数据来源</h5>
     <ul class="src">
-      <li>广东省文化和旅游厅 · 全省 A 级景区优惠名单</li>
-      <li>文旅深圳 ·「悦赏金秋 乐游神州」文旅优惠发布</li>
-      <li>各地市文旅局公众号（韶关 / 河源 / 肇庆 / 惠州 等）</li>
+      <li>广东省文化和旅游厅《迎 APEC 游活力广东》秋假福利包（2026-10-17）</li>
+      <li>深圳特区报 2026-10-19《全省超 600 家 A 级景区向深圳市民发出秋日邀请函》</li>
+      <li>各地市文旅局公众号（韶关 / 河源 / 肇庆 / 惠州 / 广州 / 江门 等）</li>
       <li>四川省、安徽省相关景区官方公告</li>
       <li>深圳市政府新闻办 2026-10-15 APEC 会议周发布会</li>
-      <li>深圳本地宝 / 深圳特区报 对优惠名单的汇总报道</li>
+      <li>文旅深圳 / 宝安日报 对优惠名单的汇总报道</li>
     </ul>
     <div class="disc">
       整理时间：2026 年 10 月 23 日。本页为公开信息整理，非官方发布，优惠名单、预约规则与时间窗口可能随时调整，
       出行前请以「文旅深圳」及各景区官方公众号的最新公告为准。景区数量与代表景区仅列出有公开口径的部分，未列出的景区不代表不参与。
     </div>
+    <ul class="caveats">
+      <li><b>数量口径：</b>「600 多家」是省文旅厅对参与景区（含免票、折扣、食宿联动）的总口径；其中明确免首道门票的为 14 市超 320 家，另有广州、佛山、东莞、中山、江门、湛江等市以专项优惠参与，两者不可直接相加。</li>
+      <li><b>时效说明：</b>数据核对于 2026-10-23，依据省文旅厅 10 月 17 日发布；活动窗口 11 月 14—22 日，临期若有名单增减，以官方当日发布为准。</li>
+      <li><b>价格口径：</b>本页仅对河源、江门、珠海等有公开报道的景区标注原价与折扣，其余以景区公示票价为准。</li>
+    </ul>
     <div class="credit"><i>作者</i><b>蔡子民</b></div>
   </div>
 </footer>
