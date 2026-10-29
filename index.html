@@ -66,6 +66,15 @@
   .lede{
     font-size:16px;color:#C8D6CD;max-width:640px;line-height:1.75;
   }
+  .stamp{
+    display:inline-flex;flex-wrap:wrap;align-items:center;gap:0 10px;
+    margin-top:20px;padding:7px 12px;border-radius:8px;
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.12);
+    font-size:11.5px;letter-spacing:.02em;color:#9CB8A9;
+  }
+  .stamp b{color:#DCE8E1;font-weight:500;}
+  .stamp i{font-style:normal;color:#6E8C7D;}
   .hero-facts{
     display:flex;flex-wrap:wrap;gap:0;
     margin-top:38px;border-top:1px solid rgba(255,255,255,.14);
@@ -200,6 +209,8 @@
     border:1px solid var(--line2);padding:4px 10px;border-radius:7px;
   }
   .chips span.hl{background:#FBF3E4;border-color:#E4D3AF;color:#7A5620;}
+  .chips span.nw{background:#EEF6E6;border-color:#CFE3B8;color:#3D5B18;}
+  .chips span.nw::before{content:"新增 ";font-size:10px;opacity:.75;}
   .city .foot{
     font-size:12px;color:var(--ink3);margin-top:14px;padding-top:12px;
     border-top:1px dashed var(--line);line-height:1.6;
@@ -322,6 +333,12 @@
       2026 年 11 月 14 日起，广东 14 个地市 600 多家 A 级景区、省外 15 家 5A 景区对深圳市民免除首道门票。
       这是近年来覆盖范围最大的一次跨省联动优惠，窗口期正好横跨两个完整周末。
     </p>
+    <p class="stamp">
+      <b>数据版本 v3.0</b>
+      <i>|</i>核对日期 <b>2026-10-29</b>
+      <i>|</i>依据 广东省文化和旅游厅 2026-10-17、10-27 发布
+      <i>|</i>名单仍在滚动更新
+    </p>
     <dl class="hero-facts">
       <div>
         <dt>省内窗口</dt>
@@ -369,13 +386,13 @@
         <div class="rule">
           <div class="k">WHO</div>
           <h4>谁能免</h4>
-          <p>持深圳市公安局签发的有效证件的市民，<b>仅限本人使用</b>。非深户持深圳居住证同样享受。</p>
-          <span class="tag">身份证 / 居住证 / 社保卡 / 户口本</span>
+          <p>官方备注口径为「凭<b>深圳市身份证或居住证</b>」办理，<b>仅限本人</b>；深圳方发布与部分地市扩展到<b>户口本、社保卡</b>。</p>
+          <span class="tag">身份证 / 居住证（官方口径）</span>
         </div>
         <div class="rule">
           <div class="k">WHAT TO BRING</div>
           <h4>带什么</h4>
-          <p>必须带<b>证件原件</b>到窗口核验，照片、复印件、电子证照多数景区不认。</p>
+          <p>必须带<b>证件原件</b>到窗口核验。社保卡、户口本是否接受<b>各景区不一致</b>，出发前先看该景区公告。</p>
           <span class="tag">原件 · 不认截图</span>
         </div>
         <div class="rule">
@@ -494,16 +511,16 @@
           <div class="city-h"><h4>梅州</h4><span class="cnt">全域全免</span></div>
           <div class="pos">世界客都，围龙屋与客家文化主线</div>
           <div class="chips">
-            <span class="hl">客家围龙屋</span><span>中国客家博物馆</span><span>灵光寺</span><span>桥溪古韵</span>
+            <span class="hl">雁南飞茶田</span><span>客天下</span><span>叶剑英纪念园</span><span>客家围龙屋</span><span>中国客家博物馆</span>
           </div>
-          <div class="foot"><b>交通：</b>深圳北—梅州西高铁约 2 小时。<b>适合：</b>人文线，走路少，适合带长辈。</div>
+          <div class="foot"><b>规模：</b>全市 A 级景区全免，含 25 家常态收费景区（原本要买票的也在内）。<b>交通：</b>深圳北—梅州西高铁约 2 小时，走路少，适合带长辈。</div>
         </div>
 
         <div class="city">
           <div class="city-h"><h4>汕尾</h4><span class="cnt">全域全免</span></div>
           <div class="pos">滨海线，红海湾看日出，海丰看红色旧址</div>
           <div class="chips">
-            <span class="hl">红海湾</span><span>玄武山</span><span>莲花山森林公园</span><span>彭湃故居</span>
+            <span class="hl">红海湾</span><span>玄武山</span><span>凤山祖庙</span><span>铜鼎山</span><span>彭湃故居</span>
           </div>
           <div class="foot"><b>交通：</b>深圳北—汕尾高铁约 1 小时，是 A 类里最近的海。</div>
         </div>
@@ -512,7 +529,7 @@
           <div class="city-h"><h4>清远</h4><span class="cnt">全域全免</span></div>
           <div class="pos">溶洞 + 峡谷 + 漂流，秋季水量仍可</div>
           <div class="chips">
-            <span class="hl">连州地下河</span><span>金子山</span><span>牛鱼嘴</span><span>古龙峡</span><span>千年瑶寨</span>
+            <span class="hl">连州地下河（5A）</span><span>金子山</span><span>牛鱼嘴</span><span>古龙峡</span><span>千年瑶寨</span><span>广东第一峰</span><span>太和古洞</span>
           </div>
           <div class="foot"><b>额外福利：</b>清远长隆度假区门票 5 折（自驾车票不参与折扣）。<b>交通：</b>深圳北—清远高铁约 1 小时。</div>
         </div>
@@ -530,9 +547,10 @@
           <div class="city-h"><h4>肇庆</h4><span class="cnt">全域全免</span></div>
           <div class="pos">湖光山色 + 端砚文化，性价比最高的一站</div>
           <div class="chips">
-            <span class="hl">鼎湖山（5A）</span><span class="hl">七星岩（5A）</span><span>星湖绿道</span><span>端砚文化村</span>
+            <span class="hl">星湖旅游景区（鼎湖山 + 七星岩 + 星湖湿地）</span><span>包公文化园</span><span>阅江楼</span>
+            <span>砚洲岛</span><span class="nw">高要猫爪谷</span><span class="nw">四会奇石河</span>
           </div>
-          <div class="foot"><b>交通：</b>深圳北—肇庆东高铁约 1.5—2 小时。鼎湖山与七星岩同属星湖景区，一天可连刷。</div>
+          <div class="foot"><b>交通：</b>深圳北—肇庆东高铁约 1.5—2 小时。鼎湖山与七星岩同属星湖景区，一天可连刷。<b>更新：</b>猫爪谷、奇石河为 10 月 27 日第二批公布。</div>
         </div>
       </div>
 
@@ -547,7 +565,7 @@
           <div class="city-h"><h4>惠州</h4><span class="cnt alt">50+ 家国有 A 级</span></div>
           <div class="pos">罗浮山 + 南昆山，离龙岗最近的登山选项</div>
           <div class="chips">
-            <span class="hl">罗浮山（5A）</span><span>南昆山</span><span>巽寮湾</span><span>惠州西湖</span>
+            <span class="hl">罗浮山（5A）</span><span>南昆山</span><span>巽寮湾</span><span>惠州西湖·红花湖</span>
           </div>
           <div class="foot"><b>交通：</b>自驾约 1—1.5 小时，是深圳东部出发最省时的 5A。</div>
         </div>
@@ -574,9 +592,9 @@
           <div class="city-h"><h4>汕头</h4><span class="cnt alt">国有 A 级全免</span></div>
           <div class="pos">南澳岛环岛 + 小公园开埠区</div>
           <div class="chips">
-            <span class="hl">南澳岛</span><span>小公园开埠区</span><span>礐石风景区</span><span>陈慈黉故居</span>
+            <span class="hl">南澳岛生态旅游区</span><span>妈屿岛旅游区</span><span>中海黄金海岸</span><span>小公园开埠区</span>
           </div>
-          <div class="foot"><b>交通：</b>深圳北—汕头约 2 小时；上岛大桥节假日易堵，建议早出发。</div>
+          <div class="foot"><b>规模：</b>全市 A 级景区全免。<b>交通：</b>深圳北—汕头约 2 小时；上岛大桥节假日易堵，建议早出发。</div>
         </div>
 
         <div class="city">
@@ -636,7 +654,7 @@
         </div>
 
         <div class="city">
-          <div class="city-h"><h4>东莞</h4><span class="cnt alt">3 家免票</span></div>
+          <div class="city-h"><h4>东莞</h4><span class="cnt alt">19 家 A 级</span></div>
           <div class="pos">古村 + 山林 + 博物馆，离龙岗最近的一档</div>
           <div class="chips">
             <span class="hl">南社明清古村落</span><span>广东观音山国家森林公园</span><span>逸颐艺舍博物馆</span>
@@ -646,7 +664,7 @@
         </div>
 
         <div class="city">
-          <div class="city-h"><h4>中山</h4><span class="cnt alt">3 家免票</span></div>
+          <div class="city-h"><h4>中山</h4><span class="cnt alt">覆盖 85% 景区</span></div>
           <div class="pos">深中通道直达，顺带吃饭住宿的短途线</div>
           <div class="chips">
             <span class="hl">中山影视城</span><span>大尖山露营公园</span><span>厨邦酱油文化博览馆</span>
@@ -659,7 +677,7 @@
           <div class="pos">世遗碉楼与海岛温泉的组合线</div>
           <div class="chips">
             <span class="hl">开平碉楼（5 折）</span><span>那琴半岛（5 折）</span><span>赤坎华侨古镇（99 元）</span>
-            <span>启超故里·小鸟天堂（免票）</span><span>古劳水乡（免票）</span>
+            <span class="nw">启超故里·小鸟天堂（4A · 免票）</span><span class="nw">古劳水乡（4A · 免票）</span>
             <span>川岛套票（5 折）</span><span>古兜温泉谷（78 元）</span>
           </div>
           <div class="foot"><b>说明：</b>赤坎古镇原价 150 元，活动价 99 元；川岛套票含往返船票与车票。景区内酒店另享 8 折。</div>
@@ -774,8 +792,8 @@
         <div class="tip">
           <div class="mark">6</div>
           <div>
-            <h4>名单会滚动更新</h4>
-            <p>这是第一批次发布，后续还会有省市和平台补充。出行前以「文旅深圳」和各地市文旅公众号的最终名单为准。</p>
+            <h4>名单已更新到第二批</h4>
+            <p>10 月 15 日首批发布后，省文旅厅 <b>10 月 27 日</b>又补发「四大文旅廊道」一批（肇庆猫爪谷、四会奇石河、江门小鸟天堂与古劳水乡等）。本页带「新增」标记的即第二批。</p>
           </div>
         </div>
       </div>
@@ -837,19 +855,21 @@
     <h5>数据来源</h5>
     <ul class="src">
       <li>广东省文化和旅游厅《迎 APEC 游活力广东》秋假福利包（2026-10-17）</li>
+      <li>广东省文化和旅游厅《广东四大文旅廊道向深圳市民送上秋假出游惠民礼包》（2026-10-27，第二批）</li>
       <li>深圳特区报 2026-10-19《全省超 600 家 A 级景区向深圳市民发出秋日邀请函》</li>
-      <li>各地市文旅局公众号（韶关 / 河源 / 肇庆 / 惠州 / 广州 / 江门 等）</li>
+      <li>各地市文旅局公众号（韶关 / 河源 / 肇庆 / 惠州 / 广州 / 江门 / 梅州 等）</li>
       <li>四川省、安徽省相关景区官方公告</li>
       <li>深圳市政府新闻办 2026-10-15 APEC 会议周发布会</li>
-      <li>文旅深圳 / 宝安日报 对优惠名单的汇总报道</li>
     </ul>
     <div class="disc">
-      整理时间：2026 年 10 月 23 日。本页为公开信息整理，非官方发布，优惠名单、预约规则与时间窗口可能随时调整，
-      出行前请以「文旅深圳」及各景区官方公众号的最新公告为准。景区数量与代表景区仅列出有公开口径的部分，未列出的景区不代表不参与。
+      整理时间：2026 年 10 月 23 日　｜　最近更新：2026 年 10 月 29 日（v3.0）。本页为公开信息整理，非官方发布，
+      优惠名单、预约规则与时间窗口可能随时调整，出行前请以「文旅深圳」及各景区官方公众号的最新公告为准。
     </div>
     <ul class="caveats">
+      <li><b>本版变更：</b>① 增补 10 月 27 日第二批景区（页面标「新增」）；② 凭证口径改为「官方备注身份证／居住证，户口本与社保卡为部分景区扩展」；③ 修正梅州（含 25 家常态收费景区）、汕尾、东莞（19 家 A 级）、中山（覆盖全市 85% 景区）的代表景区与规模表述。</li>
       <li><b>数量口径：</b>「600 多家」是省文旅厅对参与景区（含免票、折扣、食宿联动）的总口径；其中明确免首道门票的为 14 市超 320 家，另有广州、佛山、东莞、中山、江门、湛江等市以专项优惠参与，两者不可直接相加。</li>
-      <li><b>时效说明：</b>数据核对于 2026-10-23，依据省文旅厅 10 月 17 日发布；活动窗口 11 月 14—22 日，临期若有名单增减，以官方当日发布为准。</li>
+      <li><b>凭证口径：</b>省文旅厅备注只写「深圳市身份证或居住证」；深圳方发布与部分地市扩展到户口本、社保卡。两者不一致，实际能否入园以景区现场核验为准。</li>
+      <li><b>时效说明：</b>核对截至 2026-10-29。活动窗口 11 月 14—22 日，省外 11 月 16—22 日；名单仍在滚动增补，临期以官方当日发布为准。</li>
       <li><b>价格口径：</b>本页仅对河源、江门、珠海等有公开报道的景区标注原价与折扣，其余以景区公示票价为准。</li>
     </ul>
     <div class="credit"><i>作者</i><b>蔡子民</b></div>
